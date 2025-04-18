@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humera Shah | AI Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfcfa;
+      color: #1a1a1a;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #f4f1ed;
+      border-bottom: 1px solid #e0dbd2;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #3f3f3f;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      color: #0077b6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-top: 60px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e0dbd2;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    .project-card {
+      background: #ffffff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const navLink = document.querySelector(`nav a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+              navLinks.forEach(link => link.classList.remove('active'));
+              navLink.classList.add('active');
+            }
+          });
+        },
+        {
+          threshold: 0.6
+        }
+      );
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <nav>
+    <div><strong>Humera Shah</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#languages">Languages</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Humera Shah</h1>
+      <p>AI Enthusiast | Machine Learning | Computer Vision | Web Dev</p>
+      <p>
+        <a href="mailto:humerashah30@gmail.com">Email</a> |
+        <a href="https://github.com/Humerashah2506">GitHub</a> |
+        <a href="https://linkedin.com/in/humera-shah-b1520a296">LinkedIn</a>
+      </p>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm an aspiring Artificial Intelligence Engineer currently pursuing a BS in AI at FAST NUCES. I enjoy building intelligent systems that solve real-world problems.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, C++, HTML, CSS, Node.js, SQL</li>
+        <li><strong>AI & ML:</strong> TensorFlow, PyTorch, OpenCV</li>
+        <li><strong>Tools & Frameworks:</strong> MPI, OpenMP, MySQL</li>
+        <li><strong>Soft Skills:</strong> Analytical Thinking, Collaboration, Creativity</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-card"><strong>Basic Website (HTML/CSS)</strong> – Developed a static website for an academic project.</div>
+      <div class="project-card"><strong>Event Management Page</strong> – Designed a responsive event management page for user-friendly interaction.</div>
+      <div class="project-card"><strong>Pac-Man Game (C++)</strong> – Designed and implemented a Pac-Man game.</div>
+      <div class="project-card"><strong>Welcome Party Management System</strong> – A Node.js + Python-based platform for event planning, attendee management, and budgeting.</div>
+      <div class="project-card"><strong>Flight Delay Prediction (Python, Sklearn)</strong> – Developed predictive models to analyze aviation delay patterns using weather and flight data.</div>
+      <div class="project-card"><strong>Image Captioning System (CNN + LSTM)</strong> – Implemented a deep learning model to generate captions for images using the Flickr8k dataset.</div>
+      <div class="project-card"><strong>Text-to-3D Architectural Model Generator</strong> – An in-progress AI-driven system that converts text into interactive 3D models.</div>
+      <div class="project-card"><strong>Parallel Log File Analysis (MPI)</strong> – Built a system to detect malicious activity in large log files using parallel computing.</div>
+      <div class="project-card"><strong>Object-Oriented Programming Projects</strong> – Developed modular applications emphasizing clean design and reusability.</div>
+      <div class="project-card"><strong>Data Structures</strong> – Implemented optimized data structures to solve algorithmic challenges.</div>
+      <div class="project-card"><strong>Database Management System</strong> – Designed and managed relational databases for efficient storage and access.</div>
+      <div class="project-card"><strong>Computer Networks</strong> – Conducted simulations to analyze network performance and data flow.</div>
+      <div class="project-card"><strong>Artificial Neural Networks</strong> – Built and trained neural networks for classification and regression tasks.</div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Data Science Virtual Experience – British Airways</li>
+        <li>Developer & Tech Experience – Accenture</li>
+      </ul>
+    </section>
+
+    <section id="languages">
+      <h2>Languages</h2>
+      <ul>
+        <li>Urdu (Native)</li>
+        <li>English (Advanced)</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Humera Shah. All rights reserved.
+  </footer>
+</body>
+
+</html>
